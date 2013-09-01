@@ -1,0 +1,57 @@
+% ------------------------------------------------------------------------------
+% TYPO3 Slides for LaTeX (TYPO3 colours)
+% @author Michael Schams <typo3@2013.trash.schams.net>
+% @version 1.0.0
+%
+% ------------------------------------------------------------------------------
+% Changelog:
+%
+% 20 August 2013 - Michael Schams <typo3@2013.trash.schams.net>
+%	First initial version
+%
+% 30 August 2013 - Michael Schams <typo3@2013.trash.schams.net>
+%	link colors updated
+%
+% 31 August 2013 - Michael Schams <typo3@2013.trash.schams.net>
+%	colors of "itemize" and "enumerate" items set
+%
+% ------------------------------------------------------------------------------
+
+% primary TYPO3 colours
+% see: http://typo3.org/the-brand/style-guide/the-typo3-colors/
+\definecolor{typo3orange}{RGB}{255,135,0}
+%\definecolor{typo3black}{RGB}{0,0,0}
+%\definecolor{typo3white}{RGB}{255,255,255}
+
+% secondary TYPO3 colours
+% see: http://typo3.org/the-brand/style-guide/the-typo3-colors/
+\definecolor{typo3lightgrey}{RGB}{185,185,185}
+\definecolor{typo3middlegrey}{RGB}{140,140,140}
+\definecolor{typo3darkgrey}{RGB}{81,81,81}
+
+% other colours
+\definecolor{typo3red}{RGB}{255,0,0}
+\definecolor{typo3blue}{RGB}{0,0,255}
+
+% set the title color
+\setbeamercolor{subtitle}{fg=black}
+
+% ...
+\setbeamercolor{block title}{bg=typo3orange,fg=white}
+\setbeamercolor{block body}{fg=typo3middlegrey}
+
+% ...
+\setbeamercolor*{itemize item}{fg=typo3darkgrey}		% {fg=typo3orange}
+\setbeamercolor*{itemize subitem}{fg=typo3darkgrey}		% {fg=typo3orange}
+\setbeamercolor*{itemize subsubitem}{fg=typo3darkgrey}	% {fg=typo3orange}
+
+\setbeamercolor*{enumerate item}{fg=black}
+\setbeamercolor*{enumerate subitem}{fg=black}
+\setbeamercolor*{enumerate subsubitem}{fg=black}
+
+% ...
+\definecolor{links}{RGB}{0,0,255}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+
+% ------------------------------------------------------------------------------
+
