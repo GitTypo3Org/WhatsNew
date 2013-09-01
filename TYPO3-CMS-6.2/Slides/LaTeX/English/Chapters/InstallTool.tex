@@ -1,0 +1,253 @@
+% ------------------------------------------------------------------------------
+% TYPO3 CMS 6.2 LTS - What's New - Chapter "Install Tool" (English Version)
+% @author Michael Schams <typo3@2013.trash.schams.net>
+% @version 1.0.0
+%
+% ------------------------------------------------------------------------------
+% Changelog:
+%
+% 20 August 2013 - Michael Schams <typo3@2013.trash.schams.net>
+%	First initial version
+%
+% 31 August 2013 - Michael Schams <typo3@2013.trash.schams.net>
+%	First two chapters (Introduction and Install Tool) created as proof-of-concept
+%
+% ------------------------------------------------------------------------------
+
+% ------------------------------------------------------------------------------
+% Chapter: Install Tool
+% ------------------------------------------------------------------------------
+
+\section{Install Tool}
+\begin{frame}[fragile]
+	\frametitle{Install Tool}
+
+	\begin{center}\huge{Chapter 1:}\end{center}
+	\begin{center}\huge{\color{typo3darkgrey}\textbf{The Install Tool}}\end{center}
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+% Standard Slide
+% ------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+	\frametitle{Install Tool}
+	\framesubtitle{Re-Development}
+
+	\begin{columns}[T]
+
+		\begin{column}{.5\textwidth}
+			\begin{itemize}
+				\item Re-developed in Extbase/Fluid
+				\item \underline{First} step tests system environment and reports issues
+				\item reported issues can be fixed\newline
+					(and re-tested) or ignored
+			\end{itemize}
+		\end{column}
+
+		\begin{column}{.5\textwidth}
+%			\begin{figure}
+%				\includegraphics[width=0.6\linewidth]{Images/InstallTool/SystemEnvironmentCheck.png}
+%			\end{figure}
+		\end{column}
+
+	\end{columns}
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+% Standard Slide
+% ------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+	\frametitle{Install Tool}
+	\framesubtitle{Re-Development}
+
+	\begin{columns}[T]
+
+		\begin{column}{.5\textwidth}
+			\begin{itemize}
+				\item \underline{Second} step allows users to enter database access details
+				\item Connection types are selectable
+					\begin{itemize}
+						\item TCP/IP based connection
+						\item Socket based connection
+					\end{itemize}
+				\item MySQL alternatives are possible
+			\end{itemize}
+		\end{column}
+
+		\begin{column}{.5\textwidth}
+%			\begin{figure}
+%				\includegraphics[width=0.6\linewidth]{Images/InstallTool/DatabaseConnectionDetails.png}
+%			\end{figure}
+		\end{column}
+
+	\end{columns}
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+% Standard Slide
+% ------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+	\frametitle{Install Tool}
+	\framesubtitle{Re-Development}
+
+	\begin{columns}[T]
+
+		\begin{column}{.5\textwidth}
+			\begin{itemize}
+				\item \underline{Third} step allows users to select/create the database\newline
+					(as in versions before TYPO3 6.2)
+				\item \underline{Fourth} step allows users to set a password for the "admin" user
+				\item ...and a site name
+			\end{itemize}
+		\end{column}
+
+		\begin{column}{.5\textwidth}
+%			\begin{figure}
+%				\includegraphics[width=0.6\linewidth]{Images/InstallTool/AdminPasswordAndSiteName.png}
+%			\end{figure}
+		\end{column}
+
+	\end{columns}
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+% Standard Slide
+% ------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+	\frametitle{Install Tool}
+	\framesubtitle{Delete all cache}
+
+	\begin{itemize}
+		\item New function under "Important actions" lets users delete all cache
+		\item This also works, if cache contains invalid PHP code\newline
+			(which possibly locks TYPO3 CMS)
+		\item Bypass a not-working TYPO3 CMS by accessing Install Tool directly:\newline
+			\texttt{http://www.yourdomain.com/typo3/install}
+
+	\end{itemize}
+
+%	\begin{figure}
+%		\includegraphics[width=0.6\linewidth]{Images/Introduction/ClearAllCache.png}
+%	\end{figure}
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+% Standard Slide
+% ------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+	\frametitle{Install Tool}
+	\framesubtitle{Delete all cache}
+
+	Sequence of actions when executing "Delete all cache":
+
+	\begin{enumerate}
+		\item Delete content of directory \texttt{typo3temp/Cache}
+		\item Empty database tables \texttt{cf\_*}
+		\item Load \texttt{ext\_localconf} and \texttt{ext\_tables} from extensions
+		\item Execute \texttt{flushCaches()}
+	\end{enumerate}
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+% Standard Slide
+% ------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+	\frametitle{Install Tool}
+	\framesubtitle{Check for broken extensions}
+
+	\begin{itemize}
+		\item New function under "Important actions" lets users check,\newline
+			if extensions can be loaded without breaking the system
+	\end{itemize}
+
+%	\begin{figure}
+%		\includegraphics[width=0.6\linewidth]{Images/Introduction/ClearAllCache.png}
+%	\end{figure}
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+% Standard Slide
+% ------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+	\frametitle{Install Tool}
+	\framesubtitle{Create backend administrator user}
+
+	\begin{itemize}
+		\item When creating new backend administrator user via Install Tool,\newline
+			a salted password is used
+			(requires installed, loaded and configured EXT:saltedpasswords)
+	\end{itemize}
+
+%	\begin{figure}
+%		\includegraphics[width=0.6\linewidth]{Images/Introduction/ClearAllCache.png}
+%	\end{figure}
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+% Standard Slide
+% ------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+	% \TabPositions{2cm}
+
+	\frametitle{Install Tool}
+	\framesubtitle{Subtitle ???} % *TODO*
+
+	\begin{itemize}
+		\item Installer ensures that all required files and directories are in place
+		\item Files required for a custom setup will be created automatically
+		\item The following symbolic links \underline{must} exist:
+
+		\begin{itemize}
+			\item \texttt{typo3\_src}	\tabto{2cm} (points to TYPO3 source directory)
+			\item \texttt{typo3}		\tabto{2cm} (points to directory: \texttt{typo3\_src/typo3})
+			\item \texttt{index.php}	\tabto{2cm} (points to file: \texttt{typo3\_src/index.php})
+		\end{itemize}
+
+		\item No further files/directories are required to install TYPO3!
+		\item As a consequence, the TYPO3 Dummy Package becomes obsolute
+		\item Further details: see \href{http://docs.typo3.org/typo3cms/InstallationGuide}{TYPO3 Installation and Upgrade Guide}
+
+	\end{itemize}
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+% Standard Slide
+% ------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+	\frametitle{Install Tool}
+	\framesubtitle{Miscellaneous}
+
+	\begin{itemize}
+		\item All forms are CSRF (\textit{cross-site request forgery}) protected
+		\item Install Tool uses a simplified Fluid Standalone View
+		\item Only essential TYPO3 functions are loaded\newline
+			(corrupt \texttt{ext\_localconf.php} or \texttt{ext\_tables.php} of extensions can not break the Install Tool any more)
+		\item New starting point:	\tabto{3.2cm} \texttt{typo3/sysext/install/Start/Install.php}\newline
+			Before:			\tabto{3.2cm} \texttt{typo3/install/index.php}\newline
+			(redirect from old to new URL exists)
+		\item Deactivated cache ensures that Install Tool remains usable, even if cache contains invalid PHP code
+		\item Check if PHP option \texttt{xdebug.max\_nesting\_level} shows a value of 250 or higher (default value "100" possibly causes problems)
+	\end{itemize}
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
