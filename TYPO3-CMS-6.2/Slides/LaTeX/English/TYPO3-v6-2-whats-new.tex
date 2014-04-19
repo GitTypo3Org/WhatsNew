@@ -1,20 +1,10 @@
 % ------------------------------------------------------------------------------
 % TYPO3 CMS 6.2 LTS - What's New (English Version)
-% @author Michael Schams <typo3@2013.trash.schams.net>
-% @version 1.0.0
 %
-% ------------------------------------------------------------------------------
-% Changelog:
-%
-% 20 August 2013 - Michael Schams <typo3@2013.trash.schams.net>
-%	First initial version
-%
-% 31 August 2013 - Michael Schams <typo3@2013.trash.schams.net>
-%	First two chapters (Introduction and Install Tool) created as proof-of-concept
-%
-% 01 September 2013 - Michael Schams <typo3@2013.trash.schams.net>
-%	Separate chapters into external files
-%
+% @author	Michael Schams <schams.net>
+% @license	Creative Commons BY-NC-SA 3.0
+% @link		http://typo3.org/download/release-notes/whats-new/
+% @language	English
 % ------------------------------------------------------------------------------
 
 % change the default aspect ratio and frame size
@@ -39,17 +29,19 @@
 % global variables
 \title{TYPO3 CMS 6.2 LTS - What's New}
 \subtitle{Summary of the new features, changes and improvements}
-\author{(Author)}
+\author{
+	\centerline{Created by:}
+	\centerline{Patrick Lobacher and Michael Schams}
+}
 \date{\today}
 
 \begin{document}
-%\fontsize{15}{18}\selectfont
 
 % select TYPO3 Share font
 \sharefont
 
 % ------------------------------------------------------------------------------
-% title page
+% Title Page
 % ------------------------------------------------------------------------------
 
 \begingroup
@@ -63,7 +55,7 @@
 \endgroup
 
 % ------------------------------------------------------------------------------
-% table of contents
+% Table of Contents
 % ------------------------------------------------------------------------------
 
 % between two frames: use \newpage (not \clearpage!) to force a column break:
@@ -87,109 +79,78 @@
 \include{Chapters/Introduction}
 
 % ------------------------------------------------------------------------------
-% Chapter: Install Tool
+% Chapter 1: Install Tool
 % ------------------------------------------------------------------------------
 
 \include{Chapters/InstallTool}
 
 % ------------------------------------------------------------------------------
-% Chapter: Test Chapter
+% Chapter 2: TYPO3 CMS Goes Responsive
 % ------------------------------------------------------------------------------
 
-\section{Test Chapter}
-\begin{frame}[fragile]
-	\frametitle{Test Chapter}
-
-	\begin{center}\huge{Chapter 2:}\end{center}
-	\begin{center}\huge{\color{typo3darkgrey}\textbf{The Test Chapter}}\end{center}
-
-\end{frame}
+\include{Chapters/ResponsiveImages}
 
 % ------------------------------------------------------------------------------
-% Standard Slide
+% Chapter 3: Backend Changes
 % ------------------------------------------------------------------------------
 
-\begin{frame}
-	\frametitle{Test Chapter}
-	\framesubtitle{Font Styles}
-
-	\begin{itemize}
-		\item \emph{emphasis}
-		\item \textsf{Sans}
-		\item \texttt{teletypefont}
-		\item \textit{italic}
-		\item \underline{underline}
-		\item \uppercase{uppercase}
-		\item \textbf{bold}
-		\item \alert{alert}
-		\item
-			\begingroup
-				\color{typo3orange}
-				typo3orange
-			\endgroup
-
-	\end{itemize}
-
-\end{frame}
+\include{Chapters/BackendChanges}
 
 % ------------------------------------------------------------------------------
-% Standard Slide
+% Chapter 4: TypoScript
 % ------------------------------------------------------------------------------
 
-\begin{frame}
-	\frametitle{Test Chapter}
-	\framesubtitle{Links}
-
-	\begin{itemize}
-		\item Item
-		\item Item with link: \url{http://typo3.org}
-		\item Item with \href{http://typo3.org}{link label}
-
-		\item First level
-		\begin{itemize}
-			\item Second level
-			\begin{itemize}
-				\item Third level
-			\end{itemize}
-		\end{itemize}
-
-	\end{itemize}
-
-\end{frame}
+\include{Chapters/TypoScript}
 
 % ------------------------------------------------------------------------------
-% Standard Slide
+% Chapter 5: Package Management
 % ------------------------------------------------------------------------------
 
-\begin{frame}
-	\frametitle{Test Chapter}
-	\framesubtitle{Item List}
-
-	\begin{itemize}
-		\item Item 1
-		\item Item 2
-		\item Item 3
-		\item Item 4
-		\item Item 5
-		\item Item 6
-		\item Item 7
-		\item Item 8
-		\item Item 9
-		\item Item 10
-		\item Item 11
-		\item Item 12
-	\end{itemize}
-
-\end{frame}
+\include{Chapters/PackageManagement}
 
 % ------------------------------------------------------------------------------
+% Chapter 6: In-Depth Changes
+% ------------------------------------------------------------------------------
 
-% an empty frame to enforce entries in the table of contents
-% *TODO* to be removed later
+\include{Chapters/InDepthChanges}
 
-\section{Empty Frame}
-\begin{frame}
-\end{frame}
+% ------------------------------------------------------------------------------
+% Chapter 7: Application Programming Interface
+% ------------------------------------------------------------------------------
 
+\include{Chapters/ApplicationProgrammingInterface}
+
+% ------------------------------------------------------------------------------
+% Chapter 8: Extbase & Fluid
+% ------------------------------------------------------------------------------
+
+\include{Chapters/ExtbaseAndFluid}
+
+% ------------------------------------------------------------------------------
+% Chapter 9: Upgrade TYPO3 CMS 4.5 to 6.2 LTS
+% ------------------------------------------------------------------------------
+
+\include{Chapters/Upgrade}
+
+% ------------------------------------------------------------------------------
+% Chapter 10: Myth Buster
+% ------------------------------------------------------------------------------
+
+\include{Chapters/MythBuster}
+
+% ------------------------------------------------------------------------------
+% Chapter 11: Sources and Authors
+% ------------------------------------------------------------------------------
+
+\include{Chapters/SourcesAndAuthors}
+
+% ------------------------------------------------------------------------------
+% Chapter: Test/Example Chapter
+% *** DO NOT INCLUDE THIS CHAPTER IN FINAL VERSION! ***
+% ------------------------------------------------------------------------------
+
+%\include{Chapters/TestChapter}
+
+% ------------------------------------------------------------------------------
 \end{document}
 

@@ -1,20 +1,10 @@
 % ------------------------------------------------------------------------------
 % TYPO3 Slides for LaTeX (Beamer Theme for TYPO3 Slides)
-% @author Michael Schams <typo3@2013.trash.schams.net>
-% @version 1.0.0
 %
-% ------------------------------------------------------------------------------
-% Changelog:
-%
-% 20 August 2013 - Michael Schams <typo3@2013.trash.schams.net>
-%	First initial version
-%
-% 30 August 2013 - Michael Schams <typo3@2013.trash.schams.net>
-%	minor updates (fine tuning)
-%
-% 31 August 2013 - Michael Schams <typo3@2013.trash.schams.net>
-%	package "tabs" added
-%
+% @author	Michael Schams <schams.net>
+% @license	Creative Commons BY-NC-SA 3.0
+% @link		http://typo3.org/download/release-notes/whats-new/
+% @language	N/A
 % ------------------------------------------------------------------------------
 
 \mode<presentation>
@@ -30,9 +20,9 @@
 
 % soure code
 \usepackage{listings}
-%\usepackage{adjustbox}
 %\usepackage{courier}
 
+% ftp://ftp.tex.ac.uk/tex-archive/macros/latex/contrib/listings/listings.pdf
 \lstset{%
 	basicstyle=\scriptsize\ttfamily,
 	basewidth=0.5em,
@@ -42,11 +32,18 @@
 	breaklines=true
 }
 
+% ...
+% http://mirror.math.ku.edu/tex-archive/macros/latex/contrib/adjustbox/adjustbox.pdf
+% \usepackage{adjustbox}
+
 % font package to get rid off warnings when rendering the document
 \usepackage{lmodern}
 
 % tabs
 \usepackage{tabto}
+
+% symbols (e.g. arrow right in chapter "Myth Buster")
+\usepackage{textcomp}
 
 % ...
 \usepackage{datetime}
@@ -78,6 +75,11 @@
 \setbeamerfont{title}{size=\fontsize{20}{24}\bfseries}
 \setbeamerfont{subtitle}{size=\normalfont\Large\fontfamily{typo3share}}
 \setbeamerfont{author}{size=\normalsize}
+
+% custom font sizes
+% default sizes are documented here: http://texblog.net/help/latex/ltx-178.html
+% LaTeX Error: Command \smaller already defined.
+% \newcommand\ <smaller> {\fontsize{9}{11}\selectfont}
 
 % footer colours
 \setbeamercolor{title in footer}{fg=black,bg=white}
@@ -128,7 +130,7 @@
 		\usebeamerfont{author}\insertauthor\par
 	\end{center}
 
-	\vspace{3cm}
+	\vspace{2.8cm}
 
 	\hbox{%
 		\begin{beamercolorbox}[wd=.5\paperwidth,ht=0.8cm,left,leftskip=10px]{license on titlepage}%
@@ -170,15 +172,16 @@
 	\vskip0pt
 }
 
-
 %\newcommand{\breakingchange}[1]{{%
 %	\color{red}
 %	{\begin{center}\uppercase{\textbf{#1}}\end{center}}%
 %}}
 
 \newcommand{\breakingchange}{%
-	\color{red}
-	{\begin{center}\uppercase{\textbf{THIS IS A BREAKING CHANGE!}}\end{center}}%
+	\begingroup
+		\color{red}
+		{\begin{center}\uppercase{\textbf{THIS IS A BREAKING CHANGE!}}\end{center}}%
+	\endgroup
 }
 
 \mode
